@@ -111,7 +111,7 @@ client.connect(err => {
 
 
 
-    app.post('/addAdmin', (req, res) => { 
+    app.post('/addAdmin', (req, res) => {
         const admin = req.body;
 
         adminCollection.insertOne(admin)
@@ -124,7 +124,7 @@ client.connect(err => {
     app.get('/admin', (req, res) => {
         const email = req.query.email;
         console.log(email)
-        adminCollection.find({email})
+        adminCollection.find({ email })
             .toArray((err, documents) => {
                 res.send(documents)
                 console.log(documents)
